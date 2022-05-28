@@ -1,20 +1,25 @@
+import java.io.File;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        MonthlyReport monthlyReport = new MonthlyReport();
+        FileParser parser = new FileParser();
         YearlyReport yearlyReport = new YearlyReport();
 
+        System.out.println();
         System.out.println("Добро пожаловать в «Автоматизация бухгалтерии [Build 1.0]»!");
         while (true) {
             printMenu();
             switch (scanner.nextInt()) {
                 case 1:
-                    // method
+                    parser.monthParser();
+                    System.out.println("SYSTEM: <МЕСЯЧНЫЕ ОТЧЕТЫ СЧИТАНЫ>\n");
                     break;
                 case 2:
-                    // method
+                    parser.yearParser();
+                    System.out.println("SYSTEM: <ГОДОВОЙ ОТЧЕТ СЧИТАН>\n");
                     break;
                 case 3:
                     // method
@@ -23,7 +28,7 @@ public class Main {
                     // method
                     break;
                 case 5:
-                    // method
+                    yearlyReport.infoInTheReport();// method Вывести информацию о годовом отчёте
                     break;
                 case 1703:
                     scanner.close();

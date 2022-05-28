@@ -1,39 +1,15 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.util.ArrayList;
+// Класс для работы с месячными отчетами
+class MonthlyReport {
+    ArrayList<MonthlyReportRecord> records = new ArrayList<>(); // Строка с итеррацией хранится здесь
 
-public class MonthlyReport {
+    public void add(MonthlyReportRecord record) {
+        records.add(record);
+    }
 
-    private String readFileContentsOrNull(String path) {
-        //String file = "src\\reports\\m.202101.csv";
+    public void infoInTheReport() {
 
+        System.out.println(records.get(0));
     }
 }
-
-//    BufferedReader reader = null;
-//        String line = "";
-//
-//        try {
-//            reader = new BufferedReader(new FileReader(path));
-//            while ((line = reader.readLine()) != null) {
-//
-//                String[] row = line.split(",");
-//
-//                for (String index : row) {
-//                    System.out.printf("%-25s", index);
-//                }
-//                System.out.println();
-//            }
-//        }
-//        catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        finally {
-//            try {
-//                reader.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-
 

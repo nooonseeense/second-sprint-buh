@@ -1,14 +1,10 @@
-import java.io.File;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         FileParser parser = new FileParser();
-        YearlyReport yearlyReport = new YearlyReport();
 
-        System.out.println();
         System.out.println("Добро пожаловать в «Автоматизация бухгалтерии [Build 1.0]»!");
         while (true) {
             printMenu();
@@ -28,7 +24,7 @@ public class Main {
                     // method
                     break;
                 case 5:
-                    yearlyReport.infoInTheReport();// method Вывести информацию о годовом отчёте
+                    // method Вывести информацию о годовом отчёте
                     break;
                 case 1703:
                     scanner.close();
@@ -49,4 +45,3 @@ public class Main {
         );
     }
 }
-

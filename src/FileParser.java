@@ -2,6 +2,7 @@ class FileParser {
     FileReader reader = new FileReader();
 
     void monthParser() {
+        MonthlyReportManager monthlyReportManager = new MonthlyReportManager();
         for (int month = 1; month <= 3; month++) {
         String content = reader.readFileContentsOrNull("resources/m.20210" + month + ".csv");
         String[] lines = content.split("\n");
@@ -14,13 +15,14 @@ class FileParser {
                 boolean isExpense = Boolean.parseBoolean(parts[1]);
                 int quantity = Integer.parseInt(parts[2]);
                 int sumOfOne = Integer.parseInt(parts[3]);
-                //***************************************************************************
+
+                MonthlyReportData monthlyReportData = new MonthlyReportData(itemName, isExpense, quantity, sumOfOne);
+                monthlyReportManager.add(monthlyReportData);
             }
         }
     }
     void yearParser() {
         YearlyReportManager yearlyReportManager = new YearlyReportManager();
-
         String content = reader.readFileContentsOrNull("resources/y.2021.csv"); // Передаем в функцию путь до файла
         String[] lines = content.split("\n"); // данные, которые вернулись из функции сохраняем в массив и режем на строки
 
@@ -33,9 +35,8 @@ class FileParser {
             boolean isExpense = Boolean.parseBoolean(parts[2]);
 
             YearlyReportData yearManager = new YearlyReportData(month, amount, isExpense); // создаем объект и передаем данные
-            yearlyReportManager.dataLines.add(yearManager);
-            yearlyReportManager.yearlyData.put(1, yearlyReportManager.dataLines);
-            System.out.println(yearlyReportManager.yearlyData.get(1));
+            yearlyReportManager.add(yearManager);
         }
+        System.out.println(yearlyReportManager);
     }
 }

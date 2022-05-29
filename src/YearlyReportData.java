@@ -9,4 +9,3 @@ class YearlyReportData {
         this.isExpense = isExpense;
     }
 }
-

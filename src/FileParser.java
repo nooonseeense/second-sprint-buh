@@ -14,8 +14,7 @@ class FileParser {
                 boolean isExpense = Boolean.parseBoolean(parts[1]);
                 int quantity = Integer.parseInt(parts[2]);
                 int sumOfOne = Integer.parseInt(parts[3]);
-
-                MonthlyReportManager monthManager = new  MonthlyReportManager(itemName, isExpense, quantity, sumOfOne);
+                //***************************************************************************
             }
         }
     }
@@ -33,7 +32,7 @@ class FileParser {
             int amount = Integer.parseInt(parts[1]);
             boolean isExpense = Boolean.parseBoolean(parts[2]);
 
-            YearlyReportData yearManager = new YearlyReportData(month, amount, isExpense); // передаем данные в класс
+            YearlyReportData yearManager = new YearlyReportData(month, amount, isExpense); // создаем объект и передаем данные
             yearlyReportManager.dataLines.add(yearManager);
             yearlyReportManager.yearlyData.put(1, yearlyReportManager.dataLines);
             System.out.println(yearlyReportManager.yearlyData.get(1));

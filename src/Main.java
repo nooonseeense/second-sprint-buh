@@ -4,6 +4,7 @@ class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         FileParser parser = new FileParser();
+        YearlyReportManager yearlyReportManager = new YearlyReportManager();
 
         System.out.println("Добро пожаловать в «Автоматизация бухгалтерии [Build 1.0]»!");
         while (true) {
@@ -11,20 +12,19 @@ class Main {
             switch (scanner.nextInt()) {
                 case 1:
                     parser.monthParser();
-                    System.out.println("SYSTEM: <МЕСЯЧНЫЕ ОТЧЕТЫ СЧИТАНЫ>\n");
                     break;
                 case 2:
                     parser.yearParser();
-                    System.out.println("SYSTEM: <ГОДОВОЙ ОТЧЕТ СЧИТАН>\n");
                     break;
                 case 3:
-                    // method
+
+                    System.out.println("SYSTEM: <ОПЕРАЦИЯ УСПЕШНО ВЫПОЛНЕНА>");
                     break;
                 case 4:
                     // method
                     break;
                 case 5:
-                    // method Вывести информацию о годовом отчёте
+                    yearlyReportManager.infoAboutTheYearlyReport();
                     break;
                 case 1703:
                     scanner.close();

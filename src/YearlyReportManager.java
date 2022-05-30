@@ -8,4 +8,5 @@ class YearlyReportManager {
     public void add(YearlyReportData record) {
         records.add(record);
     }
+
 }

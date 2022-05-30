@@ -3,6 +3,7 @@ class FileParser {
 
     void monthParser() {
         MonthlyReportManager monthlyReportManager = new MonthlyReportManager();
+
         for (int month = 1; month <= 3; month++) {
         String content = reader.readFileContentsOrNull("resources/m.20210" + month + ".csv");
         String[] lines = content.split("\n");
@@ -19,10 +20,12 @@ class FileParser {
                 MonthlyReportData monthlyReportData = new MonthlyReportData(itemName, isExpense, quantity, sumOfOne);
                 monthlyReportManager.add(monthlyReportData);
             }
+            monthlyReportManager.monthlyData.put(month, monthlyReportManager.records);
         }
     }
     void yearParser() {
         YearlyReportManager yearlyReportManager = new YearlyReportManager();
+
         String content = reader.readFileContentsOrNull("resources/y.2021.csv"); // Передаем в функцию путь до файла
         String[] lines = content.split("\n"); // данные, которые вернулись из функции сохраняем в массив и режем на строки
 
@@ -37,6 +40,6 @@ class FileParser {
             YearlyReportData yearManager = new YearlyReportData(month, amount, isExpense); // создаем объект и передаем данные
             yearlyReportManager.add(yearManager);
         }
-        System.out.println(yearlyReportManager);
+        yearlyReportManager.yearlyData.put(1, yearlyReportManager.records);
     }
 }

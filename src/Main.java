@@ -1,19 +1,20 @@
 import java.util.Scanner;
 
-class Main {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        FileParser parser = new FileParser();
+        MonthParser monthParser = new MonthParser();
+        YearlyParser yearlyParser = new YearlyParser();
 
         System.out.println("Добро пожаловать в «Автоматизация бухгалтерии [Build 1.0]»!");
         while (true) {
             printMenu();
             switch (scanner.nextInt()) {
                 case 1:
-                    parser.monthParser();
+                    monthParser.monthParser();
                     break;
                 case 2:
-                    parser.yearParser();
+                    yearlyParser.yearParser();
                     break;
                 case 3:
                     break;

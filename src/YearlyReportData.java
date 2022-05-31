@@ -1,4 +1,4 @@
-class YearlyReportData {
+public class YearlyReportData {
     int month;
     int amount;
     boolean isExpense;

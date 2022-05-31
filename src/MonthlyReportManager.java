@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-class MonthlyReportManager {
+public class MonthlyReportManager {
     public HashMap<Integer, ArrayList<MonthlyReportData>> monthData = new HashMap<>();
     public ArrayList<MonthlyReportData> records;
 

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class YearlyReportManager {
+public class YearlyReportManager {
     public ArrayList<YearlyReportData> records;
 
     YearlyReportManager() {

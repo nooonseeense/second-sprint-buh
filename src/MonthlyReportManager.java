@@ -8,8 +8,4 @@ class MonthlyReportManager {
     public MonthlyReportManager() {
         records = new ArrayList<>();
     }
-    public void add(MonthlyReportData record) {
-        records.add(record);
-    }
-
 }

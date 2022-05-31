@@ -9,7 +9,7 @@ class FileParser {
         String[] lines = content.split("\n");
 
             for (int i = 1; i < lines.length; i++) {
-                String line = lines[i];
+                String line = lines[i].trim();
                 String[] parts = line.split(",");
                 String itemName = parts[0];
                 boolean isExpense = Boolean.parseBoolean(parts[1]);
@@ -17,7 +17,7 @@ class FileParser {
                 int sumOfOne = Integer.parseInt(parts[3]);
 
                 MonthlyReportData monthlyReportData = new MonthlyReportData(itemName, isExpense, quantity, sumOfOne);
-                monthlyReportManager.add(monthlyReportData);
+                monthlyReportManager.records.add(monthlyReportData);
             }
             monthlyReportManager.monthData.put(month, monthlyReportManager.records);
         }
@@ -35,8 +35,8 @@ class FileParser {
             int amount = Integer.parseInt(parts[1]);
             boolean isExpense = Boolean.parseBoolean(parts[2]);
 
-            YearlyReportData yearManager = new YearlyReportData(month, amount, isExpense); // создаем объект и передаем данные
-            yearlyReportManager.add(yearManager);
+            YearlyReportData yearReportData = new YearlyReportData(month, amount, isExpense); // создаем объект и передаем данные
+            yearlyReportManager.records.add(yearReportData);
         }
         System.out.println("SYSTEM: <ГОДОВОЙ ОТЧЕТ СЧИТАН>\n");
     }

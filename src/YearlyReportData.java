@@ -1,7 +1,7 @@
 class YearlyReportData {
-    private int month;
-    private int amount;
-    private boolean isExpense;
+    int month;
+    int amount;
+    boolean isExpense;
 
     public YearlyReportData(int month, int amount, boolean isExpense) {
         this.month = month;

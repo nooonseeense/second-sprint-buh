@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class MonthParser {
     FileReader reader = new FileReader();
 
@@ -7,6 +9,7 @@ public class MonthParser {
         for (int month = 1; month <= 3; month++) {
             String content = reader.readFileContentsOrNull("resources/m.20210" + month + ".csv");
             String[] lines = content.split("\n");
+            ArrayList<MonthlyReportData> records = new ArrayList<>();
 
             for (int i = 1; i < lines.length; i++) {
                 String line = lines[i].trim();
@@ -17,9 +20,9 @@ public class MonthParser {
                 int sumOfOne = Integer.parseInt(parts[3]);
 
                 MonthlyReportData monthlyReportData = new MonthlyReportData(itemName, isExpense, quantity, sumOfOne);
-                monthlyReportManager.records.add(monthlyReportData);
+                records.add(monthlyReportData);
             }
-            monthlyReportManager.monthData.put(month, monthlyReportManager.records);
+            monthlyReportManager.monthData.put(month, records);
         }
         System.out.println("SYSTEM: <МЕСЯЧНЫЕ ОТЧЕТЫ СЧИТАНЫ>\n");
     }

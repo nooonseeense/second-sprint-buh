@@ -1,8 +1,9 @@
+import java.util.ArrayList;
+
 public class YearlyParser {
     FileReader reader = new FileReader();
 
-    void yearParser() {
-        YearlyReportManager yearlyReportManager = new YearlyReportManager();
+    void yearParser(ArrayList<YearlyReportData> records) {
         String content = reader.readFileContentsOrNull("resources/y.2021.csv"); // Передаем в функцию путь до файла
         String[] lines = content.split("\n"); // данные, которые вернулись из функции сохраняем в массив и режем на строки
 
@@ -14,7 +15,7 @@ public class YearlyParser {
             boolean isExpense = Boolean.parseBoolean(parts[2]);
 
             YearlyReportData yearReportData = new YearlyReportData(month, amount, isExpense); // создаем объект и передаем данные
-            yearlyReportManager.records.add(yearReportData);
+            records.add(yearReportData);
         }
         System.out.println("SYSTEM: <ГОДОВОЙ ОТЧЕТ СЧИТАН>\n");
     }

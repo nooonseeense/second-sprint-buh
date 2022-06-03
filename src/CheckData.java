@@ -20,18 +20,21 @@ public class CheckData {
                           HashMap<Integer, Integer> sumExpenseMonth,
                           HashMap<Integer, Integer> sumIncomeYearly,
                           HashMap<Integer, Integer> sumExpenseYearly) {
+        boolean isNone = false;
         for (Integer month : sumIncomeMonth.keySet()) {
             if (!(sumIncomeMonth.get(month).equals(sumIncomeYearly.get(month)))) {
+                isNone = true;
                 System.out.println("SYSTEM: <ДОХОДЫ В " + month + " МЕСЯЦЕ НЕСООТВЕТСТВУЮТ>");
-                return;
             }
         }
         for (Integer month : sumExpenseMonth.keySet()) {
+            isNone = true;
             if (!(sumExpenseMonth.get(month).equals(sumExpenseYearly.get(month)))) {
                 System.out.println("SYSTEM: <РАСХОДЫ В " + month + " МЕСЯЦЕ НЕСООТВЕТСТВУЮТ>");
-                return;
             }
         }
-        System.out.println("SYSTEM: <НЕСООТВЕТСТВИЙ НЕОБНАРУЖЕНО>");
+        if (!isNone) {
+            System.out.println("SYSTEM: <НЕСООТВЕТСТВИЙ НЕОБНАРУЖЕНО>");
+        }
     }
 }

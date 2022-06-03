@@ -11,7 +11,6 @@ public class MonthlyReportManager {
     }
 
     public void recordData(HashMap<Integer, ArrayList<MonthlyReportData>> monthData) {
-
         ArrayList<MonthlyReportData> dataListMonth;
 
         for (int month : monthData.keySet()) { // Проходимся по КЛЮЧАМ(МЕСЯЦЫ) хеш-таблицы

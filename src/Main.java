@@ -5,8 +5,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         MonthParser monthParser = new MonthParser();
         YearlyParser yearlyParser = new YearlyParser();
-        YearlyReportManager yearlyReportManager = new YearlyReportManager();
-        MonthlyReportManager monthlyReportManager = new MonthlyReportManager();
         CheckData checkData = new CheckData();
 
         System.out.println("Добро пожаловать в «Автоматизация бухгалтерии [Build 1.0]»!");
@@ -14,18 +12,20 @@ public class Main {
             printMenu();
             switch (scanner.nextInt()) {
                 case 1:
-                    monthParser.monthParser(monthlyReportManager.monthData);
+                    monthParser.monthParser(checkData.monthlyReportManager.monthData);
                     break;
                 case 2:
-                    yearlyParser.yearParser(yearlyReportManager.records);
+                    yearlyParser.yearParser(checkData.yearlyReportManager.records);
                     break;
                 case 3:
-                    checkData.recordData(monthlyReportManager.monthData, yearlyReportManager.records);
+                    checkData.recordData(
+                            checkData.monthlyReportManager.monthData,
+                            checkData.yearlyReportManager.records);
                     checkData.checkData(
-                            monthlyReportManager.sumExpenseMonth,
-                            monthlyReportManager.sumIncomeMonth,
-                            yearlyReportManager.sumExpenseYearly,
-                            yearlyReportManager.sumIncomeYearly
+                            checkData.monthlyReportManager.sumIncomeMonth,
+                            checkData.monthlyReportManager.sumIncomeMonth,
+                            checkData.yearlyReportManager.sumExpenseYearly,
+                            checkData.yearlyReportManager.sumIncomeYearly
                     );
                     break;
                 case 4:

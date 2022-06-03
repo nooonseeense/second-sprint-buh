@@ -10,7 +10,7 @@ public class YearlyReportManager {
         records = new ArrayList<>();
     }
 
-    public void recordData(ArrayList<YearlyReportData> records) { // получил доступ к каждому полю записанному в каждый индекс
+    public void recordData(ArrayList<YearlyReportData> records) {
         for (YearlyReportData record : records) {
             if (record.isExpense) {
                 sumExpenseYearly.put(record.month, record.amount);

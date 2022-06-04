@@ -6,6 +6,7 @@ public class Main {
         MonthParser monthParser = new MonthParser();
         YearlyParser yearlyParser = new YearlyParser();
         CheckData checkData = new CheckData();
+        StatForTheYear statForTheYear = new StatForTheYear();
 
         System.out.println("Добро пожаловать в «Автоматизация бухгалтерии [Build 1.0]»!");
         while (true) {
@@ -20,17 +21,18 @@ public class Main {
                 case 3:
                     checkData.recordData(
                             checkData.monthlyReportManager.monthData,
-                            checkData.yearlyReportManager.records);
-                    checkData.checkData(
-                            checkData.monthlyReportManager.sumIncomeMonth,
-                            checkData.monthlyReportManager.sumIncomeMonth,
-                            checkData.yearlyReportManager.sumExpenseYearly,
-                            checkData.yearlyReportManager.sumIncomeYearly
+                            checkData.yearlyReportManager.records
                     );
+                    System.out.println("\n");
                     break;
                 case 4:
                     break;
                 case 5:
+                    statForTheYear.stat(
+                            checkData.yearlyReportManager.sumIncomeYearly,
+                            checkData.yearlyReportManager.sumExpenseYearly
+                    );
+                    System.out.println("\n");
                     break;
                 case 1703:
                     scanner.close();

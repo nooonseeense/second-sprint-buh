@@ -13,6 +13,12 @@ public class CheckData {
             yearlyReportManager.recordData(records);
             monthlyReportManager.recordData(monthData);
             System.out.println("SYSTEM: <ОТЧЕТЫ СЧИТАНЫ УСПЕШНО>");
+            checkData(
+                    monthlyReportManager.sumIncomeMonth,
+                    monthlyReportManager.sumIncomeMonth,
+                    yearlyReportManager.sumExpenseYearly,
+                    yearlyReportManager.sumIncomeYearly
+            );
         }
     }
 
@@ -20,21 +26,21 @@ public class CheckData {
                           HashMap<Integer, Integer> sumExpenseMonth,
                           HashMap<Integer, Integer> sumIncomeYearly,
                           HashMap<Integer, Integer> sumExpenseYearly) {
-        boolean isNone = false;
+        boolean isNone = true;
         for (Integer month : sumIncomeMonth.keySet()) {
             if (!(sumIncomeMonth.get(month).equals(sumIncomeYearly.get(month)))) {
-                isNone = true;
-                System.out.println("SYSTEM: <ДОХОДЫ В " + month + " МЕСЯЦЕ НЕСООТВЕТСТВУЮТ>");
+                isNone = false;
+                System.out.println("[!] Доходы в " + month + " месяце не соответствуют>");
             }
         }
         for (Integer month : sumExpenseMonth.keySet()) {
-            isNone = true;
+            isNone = false;
             if (!(sumExpenseMonth.get(month).equals(sumExpenseYearly.get(month)))) {
-                System.out.println("SYSTEM: <РАСХОДЫ В " + month + " МЕСЯЦЕ НЕСООТВЕТСТВУЮТ>");
+                System.out.println("[!] Расходы в " + month + " месяце не соответствуют>");
             }
         }
-        if (!isNone) {
-            System.out.println("SYSTEM: <НЕСООТВЕТСТВИЙ НЕОБНАРУЖЕНО>");
+        if (isNone) {
+            System.out.println("[!] Несоответствий не обнаружено");
         }
     }
 }

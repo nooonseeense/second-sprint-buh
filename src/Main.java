@@ -7,6 +7,7 @@ public class Main {
         YearlyParser yearlyParser = new YearlyParser();
         CheckData checkData = new CheckData();
         StatForTheYear statForTheYear = new StatForTheYear();
+        StatForTheMonth statForTheMonth = new StatForTheMonth();
 
         System.out.println("Добро пожаловать в «Автоматизация бухгалтерии [Build 1.0]»!");
         while (true) {
@@ -26,6 +27,7 @@ public class Main {
                     System.out.println("\n");
                     break;
                 case 4:
+                    statForTheMonth.stat(checkData.monthlyReportManager.monthData);
                     break;
                 case 5:
                     statForTheYear.stat(

@@ -1,8 +1,8 @@
-public class MonthlyReportData { // Класс, который хранит в себе данные считанных месяцев из файлов
+public class MonthlyReportData {
     String itemName;
-    boolean isExpense; // Обозначает, является ли запись тратой (TRUE) или доходом (FALSE);
-    int quantity; // количество закупленного или проданного товара;
-    int sumOfOne; // стоимость одной единицы товара. Целое число.
+    boolean isExpense;
+    int quantity;
+    int sumOfOne;
 
     public MonthlyReportData(String itemName, boolean isExpense, int quantity, int sumOfOne) {
         this.itemName = itemName;

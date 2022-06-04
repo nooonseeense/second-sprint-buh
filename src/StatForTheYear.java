@@ -2,14 +2,16 @@ import java.util.HashMap;
 
 public class StatForTheYear {
 
-    public void stat(HashMap<Integer, Integer> sumIncomeYearly, HashMap<Integer, Integer> sumExpenseYearly) {
+    public void stat(HashMap<Integer, Integer> sumIncomeYearly,
+                     HashMap<Integer, Integer> sumExpenseYearly) {
         System.out.println("[!] Рассматриваемый год: 2021");
         incomePerMonth(sumIncomeYearly, sumExpenseYearly);
         avrExpense(sumExpenseYearly);
         avrIncome(sumIncomeYearly);
     }
 
-    public void incomePerMonth(HashMap<Integer, Integer> sumIncomeYearly, HashMap<Integer, Integer> sumExpenseYearly) {
+    public void incomePerMonth(HashMap<Integer, Integer> sumIncomeYearly,
+                               HashMap<Integer, Integer> sumExpenseYearly) {
         for (int month : sumExpenseYearly.keySet()) {
             System.out.println("Прибыль по " + month + " месяцу составила: " +
                     (sumIncomeYearly.get(month) - sumExpenseYearly.get(month)) + " рублей");

@@ -13,16 +13,16 @@ public class MonthlyReportManager {
     public void recordData(HashMap<Integer, ArrayList<MonthlyReportData>> monthData) {
         ArrayList<MonthlyReportData> dataListMonth;
 
-        for (int month : monthData.keySet()) { // Проходимся по КЛЮЧАМ(МЕСЯЦЫ) хеш-таблицы
+        for (int month : monthData.keySet()) {
             int sumIncome = 0;
             int sumExpense = 0;
-            dataListMonth = monthData.get(month); // записываем в лист все значения KEY(month)
+            dataListMonth = monthData.get(month);
 
-            for (MonthlyReportData record : dataListMonth) { // идем по всем значением в листе
-                if (record.isExpense) { // проверяем ТРАТА ЛИ
-                    sumExpense += record.quantity * record.sumOfOne;// если да, то прибавляем
+            for (MonthlyReportData record : dataListMonth) {
+                if (record.isExpense) {
+                    sumExpense += record.quantity * record.sumOfOne;
                 } else {
-                    sumIncome += record.quantity * record.sumOfOne;// в ином случае записываем в трату
+                    sumIncome += record.quantity * record.sumOfOne;
                 }
             }
             sumIncomeMonth.put(month, sumIncome);

@@ -14,6 +14,7 @@ public class StatForTheMonth {
 
     public void statCalculation(HashMap<Integer, ArrayList<MonthlyReportData>> monthData) {
         ArrayList<MonthlyReportData> listMonth;
+
         for (int month : monthData.keySet()) {
             String nameMaxIncome = " ";
             String nameMaxExpense = " ";
@@ -39,7 +40,7 @@ public class StatForTheMonth {
             System.out.println("Статистика за месяц: " + nameMonth(month));
             System.out.println("Самый прибыльный товар " + nameMaxIncome + " на сумму: " + maxIncome + " рублей");
             System.out.println("Самая большая трата " + nameMaxExpense + " на сумму: " + maxExpense + " рублей\n");
-       }
+        }
     }
 
     public String nameMonth(int month) {

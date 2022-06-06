@@ -4,12 +4,18 @@ public class StatForTheYear {
 
     public void stat(HashMap<Integer, Integer> sumIncomeYearly,
                      HashMap<Integer, Integer> sumExpenseYearly) {
+        final String MSG_INCOME = "Средний доход в рублях за все месяцы в году составил: ";
+        final String MSH_EXPENSE = "Средний расход в рублях за все месяцы в году составил: ";
+
         if (sumIncomeYearly.size() == 0 || sumExpenseYearly.size() == 0) {
             System.out.println("SYSTEM: <ГОДОВОЙ ОТЧЕТ НЕ СЧИТАН>");
         } else {
             System.out.println("[!] Рассматриваемый год: 2021");
             incomePerMonth(sumIncomeYearly, sumExpenseYearly);
-            avrExpense(sumExpenseYearly, sumIncomeYearly);
+            avrExpenseAndIncome(
+                    sumExpenseYearly, sumIncomeYearly,
+                    MSG_INCOME, MSH_EXPENSE
+            );
         }
     }
 
@@ -21,8 +27,9 @@ public class StatForTheYear {
         }
     }
 
-    public void avrExpense(HashMap<Integer, Integer> sumExpenseYearly,
-                           HashMap<Integer, Integer> sumIncomeYearly) {
+    public void avrExpenseAndIncome(HashMap<Integer, Integer> sumExpenseYearly,
+                                    HashMap<Integer, Integer> sumIncomeYearly,
+                                    String MSG_INCOME, String MSG_EXPENSE) {
         int sumExpense = 0;
         int sumIncome = 0;
 
@@ -32,9 +39,7 @@ public class StatForTheYear {
         for (int month : sumIncomeYearly.keySet()) {
             sumIncome += sumIncomeYearly.get(month);
         }
-        System.out.println("Средний доход за все месяцы в году составил: " +
-                sumIncome / sumIncomeYearly.size() + " рублей");
-        System.out.println("Средний расход за все месяцы в году составил: " +
-                sumExpense / sumExpenseYearly.size() + " рублей");
+        System.out.println(MSG_INCOME + sumIncome / sumIncomeYearly.size());
+        System.out.println(MSG_EXPENSE + sumExpense / sumExpenseYearly.size());
     }
 }

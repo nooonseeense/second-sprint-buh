@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MonthlyReportManager {
-    HashMap<Integer, ArrayList<MonthlyReportData>> monthData; // ВСЕ ДАННЫЕ СОХРАНЕНЫ ТУТ
+    HashMap<Integer, ArrayList<MonthlyReportData>> monthData;
     HashMap<Integer, Integer> sumIncomeMonth = new HashMap<>();
     HashMap<Integer, Integer> sumExpenseMonth = new HashMap<>();
 

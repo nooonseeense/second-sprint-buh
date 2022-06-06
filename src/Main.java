@@ -9,7 +9,7 @@ public class Main {
         StatForTheYear statForTheYear = new StatForTheYear();
         StatForTheMonth statForTheMonth = new StatForTheMonth();
 
-        System.out.println("Добро пожаловать в «Автоматизация бухгалтерии [Build 1.0]»!");
+        System.out.println("Добро пожаловать в «Автоматизация бухгалтерии [Build 2.0]»!");
         while (true) {
             printMenu();
             switch (scanner.nextInt()) {

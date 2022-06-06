@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MonthParser {
-    FileReader reader = new FileReader();
 
     void monthParser(HashMap<Integer, ArrayList<MonthlyReportData>> monthData) {
         for (int month = 1; month <= 3; month++) {
-            String content = reader.readFileContentsOrNull("resources/m.20210" + month + ".csv");
+
+            String content = FileReader.readFileContentsOrNull("resources/m.20210" + month + ".csv");
             String[] lines = content.split("\n");
             ArrayList<MonthlyReportData> records = new ArrayList<>();
 

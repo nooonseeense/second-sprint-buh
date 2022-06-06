@@ -4,10 +4,14 @@ public class StatForTheYear {
 
     public void stat(HashMap<Integer, Integer> sumIncomeYearly,
                      HashMap<Integer, Integer> sumExpenseYearly) {
-        System.out.println("[!] Рассматриваемый год: 2021");
-        incomePerMonth(sumIncomeYearly, sumExpenseYearly);
-        avrExpense(sumExpenseYearly);
-        avrIncome(sumIncomeYearly);
+        if (sumIncomeYearly.size() == 0 || sumExpenseYearly.size() == 0) {
+            System.out.println("SYSTEM: <ГОДОВОЙ ОТЧЕТ НЕ СЧИТАН>");
+        } else {
+            System.out.println("[!] Рассматриваемый год: 2021");
+            incomePerMonth(sumIncomeYearly, sumExpenseYearly);
+            avrExpense(sumExpenseYearly);
+            avrIncome(sumIncomeYearly);
+        }
     }
 
     public void incomePerMonth(HashMap<Integer, Integer> sumIncomeYearly,

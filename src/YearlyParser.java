@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 
 public class YearlyParser {
-    FileReader reader = new FileReader();
 
     void yearParser(ArrayList<YearlyReportData> records) {
-        String content = reader.readFileContentsOrNull("resources/y.2021.csv");
+        String content = FileReader.readFileContentsOrNull("resources/y.2021.csv");
         String[] lines = content.split("\n");
 
         for (int i = 1; i < lines.length; i++) {

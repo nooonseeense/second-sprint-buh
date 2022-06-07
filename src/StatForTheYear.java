@@ -5,7 +5,7 @@ public class StatForTheYear {
     public void stat(HashMap<Integer, Integer> sumIncomeYearly,
                      HashMap<Integer, Integer> sumExpenseYearly) {
         final String MSG_INCOME = "Средний доход в рублях за все месяцы в году составил: ";
-        final String MSH_EXPENSE = "Средний расход в рублях за все месяцы в году составил: ";
+        final String MSG_EXPENSE = "Средний расход в рублях за все месяцы в году составил: ";
 
         if (sumIncomeYearly.size() == 0 || sumExpenseYearly.size() == 0) {
             System.out.println("SYSTEM: <ГОДОВОЙ ОТЧЕТ НЕ СЧИТАН>");
@@ -14,7 +14,7 @@ public class StatForTheYear {
             incomePerMonth(sumIncomeYearly, sumExpenseYearly);
             avrExpenseAndIncome(
                     sumExpenseYearly, sumIncomeYearly,
-                    MSG_INCOME, MSH_EXPENSE
+                    MSG_INCOME, MSG_EXPENSE
             );
         }
     }
